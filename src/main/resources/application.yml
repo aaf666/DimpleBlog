@@ -7,8 +7,7 @@ dimple:
   # 版权年份
   copyrightYear: 2020
   # 文件路径
-  # profile: D:/profile/
-  profile: /apps/afei/profile/
+  profile: D:/profile/
   # 获取ip地址开关
   addressEnabled: true
   #七牛云配置
