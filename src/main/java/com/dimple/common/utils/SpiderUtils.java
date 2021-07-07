@@ -36,7 +36,7 @@ public class SpiderUtils {
     }
 
     private static Map<String, String> listSpider() {
-        RedisTemplate redisTemplate = SpringUtils.getBean("redisTemplate");
+        RedisTemplate<String, Map<String, String>> redisTemplate = SpringUtils.getBean("redisTemplate");
         ValueOperations<String, Map<String, String>> valueOperations = redisTemplate.opsForValue();
         if (redisTemplate.hasKey(KEY)) {
             return valueOperations.get(KEY);
@@ -81,35 +81,35 @@ public class SpiderUtils {
         spider.put("EasouSpider", "宜sou蜘蛛");
         spider.put("JikeSpider", "即刻蜘蛛");
         spider.put("EtaoSpider", "一淘网蜘蛛");
-
-
-        spider.put("AdsBot", "Adwords");
-        spider.put("Speedy", "entireweb");
-        spider.put("YandexBot", "YandexBot");
-        spider.put("AhrefsBot", "AhrefsBot");
-        spider.put("ezooms.bot", "ezooms.bot");
-
-        spider.put("Java", "Java程序");
-        spider.put("Mnogosearch", "MnoGoSearch搜索引擎（PHP）");
-        spider.put("Morfeus Fucking Scanner", "PHP漏洞扫描器");
-        spider.put("project25499", "Project 25499扫描器");
-        spider.put("25499", "Project 25499扫描器");
-        spider.put("James BOT", "JamesBOT搜索引擎");
-        spider.put("cognitiveseo", "JamesBOT搜索引擎");
-
-        spider.put("Iframely", "URL Meta Debugger插件");
-        spider.put("muhstik-scan", "僵尸网络-挖矿软件");
-        spider.put("muhstik", "僵尸网络-挖矿软件");
-        spider.put("SEMrushBot", "站点分析蜘蛛");// 可屏蔽
-        spider.put("python-requests", "python爬虫");
-        spider.put("python", "python爬虫");
-        spider.put("Test Certificate Info", "测试证书信息");
-        spider.put("w3m/0.5.3+git20180125", "w3m");
-        spider.put("wget", "wget");
-        spider.put("gnu.org/gnu/wget", "wget");
-        spider.put("WinHTTP", "WinHTTP");
-        spider.put("WordPress", "WordPress");
-        spider.put("Xenu Link Sleuth", "死链接检测工具");
+//
+//
+//        spider.put("AdsBot", "Adwords");
+//        spider.put("Speedy", "entireweb");
+//        spider.put("YandexBot", "YandexBot");
+//        spider.put("AhrefsBot", "AhrefsBot");
+//        spider.put("ezooms.bot", "ezooms.bot");
+//
+//        spider.put("Java", "Java程序");
+//        spider.put("Mnogosearch", "MnoGoSearch搜索引擎（PHP）");
+//        spider.put("Morfeus Fucking Scanner", "PHP漏洞扫描器");
+//        spider.put("project25499", "Project 25499扫描器");
+//        spider.put("25499", "Project 25499扫描器");
+//        spider.put("James BOT", "JamesBOT搜索引擎");
+//        spider.put("cognitiveseo", "JamesBOT搜索引擎");
+//
+//        spider.put("Iframely", "URL Meta Debugger插件");
+//        spider.put("muhstik-scan", "僵尸网络-挖矿软件");
+//        spider.put("muhstik", "僵尸网络-挖矿软件");
+//        spider.put("SEMrushBot", "站点分析蜘蛛");// 可屏蔽
+//        spider.put("python-requests", "python爬虫");
+//        spider.put("python", "python爬虫");
+//        spider.put("Test Certificate Info", "测试证书信息");
+//        spider.put("w3m/0.5.3+git20180125", "w3m");
+//        spider.put("wget", "wget");
+//        spider.put("gnu.org/gnu/wget", "wget");
+//        spider.put("WinHTTP", "WinHTTP");
+//        spider.put("WordPress", "WordPress");
+//        spider.put("Xenu Link Sleuth", "死链接检测工具");
         valueOperations.set(KEY, spider, 7, TimeUnit.DAYS);
         return spider;
     }
